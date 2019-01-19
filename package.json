@@ -1,0 +1,22 @@
+{
+  "name": "jsgui3-gfx-formats",
+  "main": "formats.js",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "files": [
+    "./formats.js",
+    "./.gitignore",
+    "./jpeg"
+  ],
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "description": "Load and save / Encode and decode in a variety of formats (eventually), currently only supports JPEG.",
+  "author": "James Vickers <james@metabench.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metabench/jsgui3-gfx-server.git"
+  },
+  "version": "0.0.1"
+}
