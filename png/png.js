@@ -1553,7 +1553,7 @@ class PNG extends Evented_Class {
     // this only is good locally... still makes pretty good results though.
     //  will do an iterative-look-back filter selection.
 
-    'analyse_scanline_predict_best_filter'(a, sig) {
+    'analyse_scanline_predict_best_filter'(_a, _sig) {
         const a = arguments,
             sig = get_a_sig(a);
         // this could take an analysis method parameter.
@@ -3074,7 +3074,7 @@ class PNG extends Evented_Class {
     //'save_to_stream': function(output_stream
 
     // a writable stream.
-    'save_to_stream'(a, sig) {
+    'save_to_stream'(_a, _sig) {
         const a = arguments,
             sig = get_a_sig(a);
         //console.log('save_to_stream');
