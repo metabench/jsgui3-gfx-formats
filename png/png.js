@@ -7,6 +7,7 @@ const {
     get_a_sig,
     Evented_Class,
 } = jsgui;
+
 var Pixel_Buffer = require('jsgui3-gfx').Pixel_Buffer;
 
 const {
@@ -3911,48 +3912,48 @@ if (require.main === module) {
     (async () => {
         const fnlfs = require('fnlfs');
 
-        const gfx = require('jsgui3-gfx-server');
+        const old = () => {
 
-        // load a sample png 8 bit with palette.
+            const gfx = require('jsgui3-gfx-server');
 
-        const load_png_save_jpeg = async () => {
-            const png_path = '../samples/pnggrad8rgb.png';
-            let jpg_path = png_path.split('.png').join('.jpg');
+            // load a sample png 8 bit with palette.
 
-            let png8bit = await fnlfs.load(png_path);
+            const load_png_save_jpeg = async () => {
+                const png_path = '../samples/pnggrad8rgb.png';
+                let jpg_path = png_path.split('.png').join('.jpg');
 
-            // Could have a syncronous non-streaming decode function.
+                let png8bit = await fnlfs.load(png_path);
 
-            //PNG.decode()
+                // Could have a syncronous non-streaming decode function.
 
-            let png = new PNG({
-                buffer: png8bit
-            })
-            // on png loaded...
+                //PNG.decode()
 
-            console.log('1) png', png);
+                let png = new PNG({
+                    buffer: png8bit
+                })
+                // on png loaded...
 
-            png.on('ready', async () => {
-                console.log('2) png', png);
+                console.log('1) png', png);
 
-                const rgbpb = png.get_rgb_pixel_buffer();
-                const rgbapb = png.get_rgba_pixel_buffer();
-                console.log('rgbapb', rgbapb);
-                // save it as a jpeg.
+                png.on('ready', async () => {
+                    console.log('2) png', png);
 
-                await gfx.save_pixel_buffer(jpg_path, rgbpb, {
-                    format: 'jpg',
-                    quality: 30
+                    const rgbpb = png.get_rgb_pixel_buffer();
+                    const rgbapb = png.get_rgba_pixel_buffer();
+                    console.log('rgbapb', rgbapb);
+                    // save it as a jpeg.
 
-                });
-                // then could greyscale it?
+                    await gfx.save_pixel_buffer(jpg_path, rgbpb, {
+                        format: 'jpg',
+                        quality: 30
 
-            })
+                    });
+                    // then could greyscale it?
+                })
+            }
+            await load_png_save_jpeg();
         }
-        await load_png_save_jpeg();
-
     })();
-
 } else {
     //console.log('required as a module');
 }
