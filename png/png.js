@@ -3912,7 +3912,7 @@ if (require.main === module) {
     (async () => {
         const fnlfs = require('fnlfs');
 
-        const old = () => {
+        const old = async() => {
 
             const gfx = require('jsgui3-gfx-server');
 

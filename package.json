@@ -3,8 +3,8 @@
   "main": "formats.js",
   "license": "MIT",
   "dependencies": {
-    "fnl": "^0.0.21",
-    "jsgui3-gfx": "^0.0.36"
+    "fnl": "^0.0.23",
+    "jsgui3-gfx-core": "^0.0.2"
   },
   "files": [
     "formats.js",
@@ -15,11 +15,11 @@
   "engines": {
     "node": ">=10.0.0"
   },
-  "description": "Load and save / Encode and decode in a variety of formats (eventually), currently only supports JPEG.",
+  "description": "Load and save / Encode and decode in a variety of formats (eventually), currently supports JPEG and PNG.",
   "author": "James Vickers <james@metabench.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/metabench/jsgui3-gfx-server.git"
   },
-  "version": "0.0.8"
+  "version": "0.0.9"
 }
